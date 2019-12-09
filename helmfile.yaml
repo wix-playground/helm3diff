@@ -1,0 +1,34 @@
+repositories:
+- name: int128.github.io
+  url: https://int128.github.io/helm-charts
+
+helmDefaults:
+  wait: false
+  timeout: 900
+
+environments:
+  default:
+    values:
+    - helmfile_secrets.yaml
+  createns:
+  destroy:
+    values:
+      - helmfile_secrets.yaml
+
+releases:
+- name: simple-cm
+  chart: ./simple-cm
+  wait: true
+  namespace: "sandbox"
+
+
+- name: chaoskube
+  chart: stable/chaoskube
+  wait: true
+  namespace: sandbox
+  values:
+  - dryRun: true
+  - namespaces: 'sandbox'
+
+
+
