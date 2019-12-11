@@ -265,7 +265,7 @@ you can get it at github
     [tiller] 2019/12/11 17:26:53 dry run for chaoskube
     Kill tiller that we have started
     ```
-    If diff reports differences run ```./apply_helm.sh tbd sync
+   If diff reports differences run ```./apply_helm.sh tbd sync
     
    Its very important to have fully synced charts before migration.
 #### 7. Migrate releases from helm2 to helm3
