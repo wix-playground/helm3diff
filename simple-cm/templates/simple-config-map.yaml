@@ -5,4 +5,6 @@ metadata:
 
 data:
   field1: filed1value
+  field2: somevalue
+
 ---
