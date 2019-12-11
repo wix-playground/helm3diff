@@ -13,7 +13,7 @@ you can get it at github
     cd helm3diff
     
 #### 0. Versions, versions...
-   Be very carefull with versions of software you are using, i did few tries and found out that this one is working. 
+   Be very careful with versions of software you are using, i did few tries and found out that this one is working. 
    
     helm2 version v2.16.1
     helm3 version v3.0.0
@@ -28,11 +28,11 @@ you can get it at github
     tar -zxvf helm-v3.0.0-darwin-amd64.tar.gz
     sudo mv darwin-amd64/helm /usr/local/bin/helm3
     
-   Dont do brew upgrade install it manually
+   Dont do brew upgrade, install it manually.
 #### 2. We will need plugins. 
-   All the data ive found says i need to migrate helm2 configuration to helm3 configuration and it will be fine. Ive tried several times it was not sucessfull.Plugins where not migrated properly
+   All the data ive found says i need to migrate helm2 configuration to helm3 configuration and it will be fine. Ive tried several times it was not successful. Plugins where not migrated properly
    In my case ive removed all plugins using ```helm plugin remove <plugin_name>``` and ```helm3 plugin remove <plugin_name```
-   And than ive installed 2 plugins   ```2to3``` and ```helm-diff``` fro both helm and helm3 seaprately
+   And than ive installed 2 plugins   ```2to3``` and ```helm-diff``` for both helm and helm3 separately
    
     helm plugin install https://github.com/helm/helm-2to3
     helm plugin install https://github.com/databus23/helm-diff --version v3.0.0-rc.7
@@ -273,7 +273,7 @@ Migration was tricky helm3 complained a lot
  - about not finding helm 2 releases 
  - about not having tiller
  - and after migration was done lock files where problematic, 
- - and you need to have LOCATION env var. i was forgeting it every time
+ - and you need to have LOCATION env var. i was forgetting it every time
    
    So this is the script ive ended up with:
    migrate_to_helm3.sh
@@ -399,7 +399,7 @@ Migration was tricky helm3 complained a lot
                   capabilities:
                     drop: ["ALL"]
             serviceAccountName: "default"
-   Sure enough since we dont have Tiller anymore our charts are managed by Helm
+   Sure enough since we dont have Tiller anymore, our charts are managed by Helm.
    So change in  ```app.kubernetes.io/managed-by``` label makes sense.<br>
    Lets sync our releases
    
@@ -458,7 +458,7 @@ Migration was tricky helm3 complained a lot
 
 #### 11. Its not all good
    I still had problem with one of actual charts. [cert-manager](https://github.com/jetstack/cert-manager)
-   It would not sync properly at the first time with helm3. I needed to redeploy it.All other charts where migrated without actuall pods restarting.
+   It would not sync properly at the first time with helm3. I needed to redeploy it.All other charts where migrated without actual pods restarting.
     
 
  
