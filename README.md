@@ -1,4 +1,4 @@
-#Migrating helmfile managed charts from helm2 to helm3
+# Migrating helmfile managed charts from helm2 to helm3
 
 We have 26 helm charts deployed to 6 kube clusters.
 We use [helmfile](https://github.com/roboll/helmfile) to manage all the charts.
